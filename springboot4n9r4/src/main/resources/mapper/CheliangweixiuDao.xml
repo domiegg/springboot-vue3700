@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.CheliangweixiuDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.CheliangweixiuEntity" id="cheliangweixiuMap">
+        <result property="weixiudanhao" column="weixiudanhao"/>
+        <result property="weixiucheliang" column="weixiucheliang"/>
+        <result property="kehuxingming" column="kehuxingming"/>
+        <result property="weixiuzhuangtai" column="weixiuzhuangtai"/>
+        <result property="weixiufeiyong" column="weixiufeiyong"/>
+        <result property="weixiushijian" column="weixiushijian"/>
+        <result property="jieshushijian" column="jieshushijian"/>
+        <result property="haocai" column="haocai"/>
+        <result property="weixiuzhanghao" column="weixiuzhanghao"/>
+        <result property="weixiuxingming" column="weixiuxingming"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.CheliangweixiuVO" >
+		SELECT * FROM cheliangweixiu  cheliangweixiu         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.CheliangweixiuVO" >
+		SELECT  cheliangweixiu.* FROM cheliangweixiu  cheliangweixiu 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.CheliangweixiuView" >
+
+		SELECT  cheliangweixiu.* FROM cheliangweixiu  cheliangweixiu 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.CheliangweixiuView" >
+		SELECT * FROM cheliangweixiu  cheliangweixiu <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
